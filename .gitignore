@@ -1,0 +1,24 @@
+# SysReptor RAG Ignore File
+
+# Environments
+venv/
+env/
+rag-venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Vector Databases
+chroma_db/
+
+# Data Files (Keep these scrubbed and local!)
+scrubbed_rag_data.json
+*.json
+*.csv
+
+# Secrets / APIs
+cookies.txt
+.env
+
+# OS Files
+.DS_Store
