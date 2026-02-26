@@ -5,12 +5,20 @@ description: How to query the local SysReptor RAG Server for historical reports 
 
 You are an AI assistant and you have access to a local Retrieval-Augmented Generation (RAG) server. This server contains over 900+ scrubbed excerpts (Executive Summaries, Technical Summaries, and specific Penetration Testing Findings) extracted from historically **finished** SysReptor projects.
 
+If you are making a new finding, prioritize Finding a template that already exists and use that template:
+```
+reptor -k template --list
+```
+If that command doesn't work, prompt the user to Configure the reptor with:
+```
+reptor conf
+```
 If a user asks you to reference a past finding, give an example of an executive summary, or mimic the company's "voice" or writing style, **you MUST query this server** for context.
 
 ## 1. Connecting to the Server
 The RAG server runs a local FastAPI that sits on `127.0.0.1:8000`. You can interface with it using the `curl` command.
 
-**Endpoint:** `POST http://127.0.0.1:8000/query`
+**Endpoint:** `POST http://INSERT_TALON.ops.local:8000/query`
 
 ## 2. Querying the Server
 The server expects a JSON payload containing the following:
