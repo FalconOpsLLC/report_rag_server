@@ -12,20 +12,21 @@ This directory contains a lightweight, fully self-contained Retrieval-Augmented 
 To deploy this RAG server on another machine, follow these steps:
 
 1. **Move files:** Copy this entire directory (specifically `rag_server.py`, `ingest_data.py`, `scrubbed_rag_data.json`, and `requirements-rag.txt`) to the target server.
-2. **Setup virtual environment:** 
+2. **Setup agents to use this RAG** Move the agent_workflows to the local machine running the agent, so the agent can have the proper system prompt to know how to use this rag server
+4. **Setup virtual environment:** 
     ```bash
     python3 -m venv venv
     source venv/bin/activate
     ```
-3. **Install Dependencies:**
+5. **Install Dependencies:**
     ```bash
     pip install -r requirements-rag.txt
     ```
-4. **Ingest Data:** Create the local vector database instance in the `./chroma_db` folder:
+6. **Ingest Data:** Create the local vector database instance in the `./chroma_db` folder:
     ```bash
     python3 ingest_data.py
     ```
-5. **Run the Server:** Start the FastAPI server. It is configured to listen on `0.0.0.0`, meaning it will be accessible from any network interface on port `8000`:
+7. **Run the Server:** Start the FastAPI server. It is configured to listen on `0.0.0.0`, meaning it will be accessible from any network interface on port `8000`:
     ```bash
     python3 rag_server.py
     ```
