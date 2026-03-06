@@ -16,9 +16,9 @@ reptor conf
 If a user asks you to reference a past finding, give an example of an executive summary, or mimic the company's "voice" or writing style, **you MUST query this server** for context.
 
 ## 1. Connecting to the Server
-The RAG server runs a local FastAPI that sits on `127.0.0.1:8000`. You can interface with it using the `curl` command.
+The RAG server runs a local FastAPI that sits on `falconops-rag.talon.internal:8000`. You can interface with it using the `curl` command.
 
-**Endpoint:** `POST http://INSERT_TALON.ops.local:8000/query`
+**Endpoint:** `POST http://falconops-rag.talon.internal:8000/query`
 
 ## 2. Querying the Server
 The server expects a JSON payload containing the following:
@@ -35,7 +35,7 @@ The server expects a JSON payload containing the following:
 Here is precisely how you should formulate a curl request to get 2 examples of an Executive Summary regarding physical security:
 
 ```bash
-curl -X POST http://127.0.0.1:8000/query \
+curl -X POST http://falconops-rag.talon.internal:8000/query \
      -H "Content-Type: application/json" \
      -d '{
            "query": "physical security assessment executive summary",
